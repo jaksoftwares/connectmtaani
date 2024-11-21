@@ -77,6 +77,7 @@ const SignupPage: React.FC = () => {
           Sign Up
         </button>
       </form>
+      
     </div>
   );
 };

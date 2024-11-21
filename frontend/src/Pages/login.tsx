@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Components/Footer/Footer';
 
 const LoginPage: React.FC = () => {
   return (
@@ -9,6 +10,7 @@ const LoginPage: React.FC = () => {
         <input type="password" placeholder="Password" />
         <button type="submit">Login</button>
       </form>
+      <Footer/>
     </div>
   );
 };

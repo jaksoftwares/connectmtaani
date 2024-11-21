@@ -1,15 +1,80 @@
 .hero {
-    text-align: center;
-    padding: 50px;
-    background: linear-gradient(to bottom, #123456, #56789a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #123456, #00aaff);
     color: white;
   }
-  button {
-    padding: 10px 20px;
-    background: #00aaff;
-    color: white;
-    border: none;
+  
+  .container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+  }
+  
+  .content {
+    flex: 1 1 600px;
+    text-align: left;
+    margin: 20px;
+  }
+  
+  .heading {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .subheading {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .button {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 30px;
     border-radius: 5px;
-    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .primary {
+    background-color: #00aaff;
+    color: white;
+    border: 2px solid transparent;
+  }
+  
+  .primary:hover {
+    background-color: white;
+    color: #00aaff;
+    border-color: #00aaff;
+  }
+  
+  .secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+  
+  .secondary:hover {
+    background-color: white;
+    color: #123456;
+  }
+  
+  .image {
+    flex: 1 1 600px;
+    margin: 20px;
+  }
+  
+  .image img {
+    max-width: 100%;
+    height: auto;
   }
   
