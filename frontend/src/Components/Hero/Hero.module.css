@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     padding: 60px 20px;
-    background: linear-gradient(135deg, #123456, #00aaff);
+    background-image: url(/src/assets/hero-illustration.jpg);
     color: white;
   }
   

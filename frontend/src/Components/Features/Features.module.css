@@ -1,12 +1,25 @@
-.features {
-    padding: 40px;
-  }
-  .features ul {
-    list-style: none;
-    padding: 0;
-  }
-  .features li {
-    margin: 10px 0;
-    font-size: 18px;
-  }
-  
+/* General Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+
+/* Features Section */
+.features .featureList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.features .featureItem {
+  flex: 1 1 250px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
