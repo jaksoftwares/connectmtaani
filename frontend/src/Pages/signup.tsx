@@ -1,130 +1,140 @@
 import React, { useState } from 'react';
+import styles from './Signup.module.css';
+import Navbar from '../Components/Navbar/navbar';
+import Footer from '../Components/Footer/Footer';
 
-const SignupPage: React.FC = () => {
+
+const SignUpPage: React.FC = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
     confirmPassword: '',
+    agreeToTerms: false,
   });
 
-  const [error, setError] = useState('');
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: type === 'checkbox' ? checked : value,
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
-
-    if (formData.password !== formData.confirmPassword) {
-      setError("Passwords don't match!");
-      return;
-    }
-
-    // Simulate API call or validation
-    console.log('User data submitted:', formData);
-    alert('Signup successful!');
+    // Perform validation and send data to the backend
+    console.log(formData);
   };
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.heading}>Signup</h1>
-      <form style={styles.form} onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Full Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          style={styles.input}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email Address"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          style={styles.input}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-          style={styles.input}
-        />
-        <input
-          type="password"
-          name="confirmPassword"
-          placeholder="Confirm Password"
-          value={formData.confirmPassword}
-          onChange={handleChange}
-          required
-          style={styles.input}
-        />
-        {error && <p style={styles.error}>{error}</p>}
-        <button type="submit" style={styles.button}>
+    <div>
+    <Navbar/>
+   
+    <div className={styles.signUpContainer}>
+      <form className={styles.signUpForm} onSubmit={handleSubmit}>
+        <h2 className={styles.title}>Sign Up</h2>
+
+        {/* First Name */}
+        <div className={styles.formGroup}>
+          <label htmlFor="firstName">First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+            placeholder="Enter your first name"
+            required
+          />
+        </div>
+
+        {/* Last Name */}
+        <div className={styles.formGroup}>
+          <label htmlFor="lastName">Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
+            placeholder="Enter your last name"
+            required
+          />
+        </div>
+
+        {/* Email */}
+        <div className={styles.formGroup}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        {/* Password */}
+        <div className={styles.formGroup}>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="Create a password"
+            required
+          />
+        </div>
+
+        {/* Confirm Password */}
+        <div className={styles.formGroup}>
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            placeholder="Confirm your password"
+            required
+          />
+        </div>
+
+        {/* Agree to Terms */}
+        <div className={styles.formGroupCheckbox}>
+          <input
+            type="checkbox"
+            id="agreeToTerms"
+            name="agreeToTerms"
+            checked={formData.agreeToTerms}
+            onChange={handleChange}
+            required
+          />
+          <label htmlFor="agreeToTerms">
+            I agree to the <a href="/terms">Terms and Conditions</a>
+          </label>
+        </div>
+
+        {/* Submit Button */}
+        <button type="submit" className={styles.submitButton}>
           Sign Up
         </button>
+
+        {/* Already have an account */}
+        <p className={styles.loginRedirect}>
+          Already have an account? <a href="/login">Log In</a>
+        </p>
       </form>
+    </div>
+    <Footer/>
     </div>
   );
 };
 
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: '100vh',
-    backgroundColor: '#f5f5f5',
-  } as React.CSSProperties,
-  heading: {
-    fontSize: '2rem',
-    marginBottom: '1rem',
-  } as React.CSSProperties,
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '100%',
-    maxWidth: '400px',
-    backgroundColor: '#fff',
-    padding: '2rem',
-    borderRadius: '8px',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-  } as React.CSSProperties,
-  input: {
-    marginBottom: '1rem',
-    padding: '0.75rem',
-    border: '1px solid #ccc',
-    borderRadius: '4px',
-    fontSize: '1rem',
-  } as React.CSSProperties,
-  button: {
-    padding: '0.75rem',
-    backgroundColor: '#4caf50',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '4px',
-    fontSize: '1rem',
-    cursor: 'pointer',
-  } as React.CSSProperties,
-  error: {
-    color: 'red',
-    marginBottom: '1rem',
-    fontSize: '0.875rem',
-  } as React.CSSProperties,
-};
-
-export default SignupPage;
+export default SignUpPage;
