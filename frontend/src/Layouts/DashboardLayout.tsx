@@ -1,0 +1,1 @@
+// Layout for authenticated user dashboards
