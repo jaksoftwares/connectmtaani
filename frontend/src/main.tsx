@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LandingPage from './Pages/index';
-import LoginPage from './Pages/login';
-import SignupPage from './Pages/signup';
-import DashboardPage from './Pages/Dashboard';
+import LandingPage from './Pages/Home/HomePage';
+import LoginPage from './Pages/Login/LoginPage';
+import SignUpPage from './Pages/Signup/SignupPage';
+import DashboardPage from './Pages/Dashboards/Workers/WorkersDashboardPage';
+import HiringPage from './Pages/Hiring/HiringPage';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -12,8 +13,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
         <Route path="/dashboard" element={<DashboardPage/>}/>
+        <Route path="/hiring" element={<HiringPage/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
