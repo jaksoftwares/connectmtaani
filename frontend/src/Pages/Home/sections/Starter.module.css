@@ -1,8 +1,20 @@
+
+
 .hero {
     text-align: center;
-    padding: 50px;
+    padding: 15px 50px;
     background: linear-gradient(to bottom, #123456, #56789a);
     color: white;
+    max-height: 100px;
+    overflow: hidden;
+    margin: 0;
+  }
+  .h1{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .p{
+    margin-top: 0;
   }
   button {
     padding: 10px 20px;

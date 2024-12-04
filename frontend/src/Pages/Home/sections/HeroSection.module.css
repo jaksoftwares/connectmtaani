@@ -1,9 +1,12 @@
 .hero {
     display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 60px 20px;
-    background-image: url(/src/assets/hero-illustration.jpg);
+    background-image: url(/home/hero.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+    width: 100%; 
+    background-position: center;
     color: white;
   }
   
@@ -17,13 +20,16 @@
   .content {
     flex: 1 1 600px;
     text-align: left;
-    margin: 20px;
+    margin: 20px 20px 20px 150px;
   }
   
   .heading {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 20px;
+  }
+  .herotext1{
+    font-size: 20px;
   }
   
   .subheading {
