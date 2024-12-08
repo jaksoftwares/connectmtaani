@@ -1,0 +1,50 @@
+/* General section styling */
+.statsSection {
+    background-color: #123456; /* Matches the dark blue background */
+    color: white;
+    padding: 50px 20px;
+  }
+  
+  .statsContainer {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the section */
+    text-align: center;
+  }
+  
+  /* Header styling */
+  .statsHeader h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .statsHeader p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+  
+  /* Stats data container */
+  .statsData {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+  }
+  
+  .statItem {
+    text-align: center;
+  }
+  
+  .statItem h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .statItem p {
+    font-size: 1rem;
+    margin: 0;
+  }
+  

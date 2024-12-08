@@ -1,101 +1,148 @@
-
 /* Navbar Container */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding: 10px 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Logo Style */
-  .logo a {
-    font-size: 24px;
-    font-weight: bold;
-    color: #2d3e50;
-    text-decoration: none;
-  }
-  
-  /* Navigation Links */
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: #fff;
+  padding: 0px 0px 0px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 1000;
+
+}
+.leftnav{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+.rightnav{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+/* Logo Style */
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2d3e50;
+  text-decoration: none;
+
+}
+
+/* Navigation Links */
+.navlinks {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+.navlinks li {
+  align-items: stretch;
+  height: 100%;
+}
+
+.navlinks li a {
+  text-decoration: none;
+  color: #2d3e50;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-left: 2px solid ;
+  height: 100%;
+  transition: all  0.3s ease;
+}
+
+.navlinks li a:hover,
+.cta .loginbtn a:hover {
+  color: #0073e6; 
+  background-color: #f0f8ff; 
+  border-color: #0073e6;
+  /* transform: scale(1.05);  */
+  font-size: 18px; 
+}
+
+.navlinks li a.active {
+  color: #ff7f00; 
+  font-weight: bold; 
+  border-color: #ff7f00;
+}
+
+/* Call-to-Action Buttons */
+.cta{
+  border-left: 2px solid ;
+  height: 100%;
+}
+.cta button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.loginbtn {
+  background-color: transparent;
+  color: #0073e6;
+}
+
+.loginbtn a {
+  color: #0073e6;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; 
+  height: 100%;
+
+}
+
+.signupbtn {
+  background-color: #ff7f00;
+  color: white;
+  border-radius: 0px;
+  height: 100%;
+  margin: 0;
+}
+
+.signupbtn a {
+  color: white;
+  text-decoration: none;
+}
+
+.cta button:hover {
+  opacity: 0.8;
+}
+.menuIcon {
+  display: none; /* Hide hamburger icon on large screens */
+  cursor: pointer;
+}
+
+.navlinks.show {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
   .navlinks {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-  }
-  
-  .navlinks li a {
-    text-decoration: none;
-    color: #2d3e50;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s;
-  }
-  
-  .navlinks li a:hover {
-    color: #0073e6;
-  }
-  
-  /* Call-to-Action Buttons */
-  .cta button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: 10px;
-  }
-  
-  .loginbtn {
-    background-color: transparent;
-    color: #0073e6;
-  }
-  
-  .logintn a {
-    color: #0073e6;
-    text-decoration: none;
-  }
-  
-  .signupbtn {
-    background-color: #ff7f00;
-    color: white;
-  }
-  
-  .signupbtn a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .cta button:hover {
-    opacity: 0.8;
-  }
-  
-  /* Mobile Menu */
-  .menu-icon {
     display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 30px;
     cursor: pointer;
   }
-  
   .navlinks.show {
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
-  @media (max-width: 768px) {
-    .navlinks {
-      display: none;
-    }
-  
-    .menu-icon {
-      display: block;
-      font-size: 30px;
-    }
-  }
-  
+}

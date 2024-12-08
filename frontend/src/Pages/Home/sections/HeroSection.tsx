@@ -7,11 +7,12 @@ const Hero: React.FC = () => {
       <div className={styles.container}>
         {/* Text Content */}
         <div className={styles.content}>
+          <div className={styles.herotext1}><p>Welcome to ConnectMtaani</p></div>
           <h1 className={styles.heading}>
-            Bridging Work, Talent, and Opportunity in Kenya
+            Bridging Work, Talent,<br /> and Opportunity in Kenya
           </h1>
           <p className={styles.subheading}>
-            ConnectMtaani is the premier platform for linking job seekers and employers 
+            ConnectMtaani is the premier platform for linking job seekers and employers <br />
             in Kenya’s informal sector. Simplify hiring, discover talent, and build opportunities.
           </p>
           <div className={styles.buttons}>
@@ -23,13 +24,7 @@ const Hero: React.FC = () => {
             </a>
           </div>
         </div>
-        {/* Image */}
-        <div className={styles.image}>
-          <img 
-            // src="/src/assets/hero-illustration.jpg" 
-            // alt="ConnectMtaani Hero Illustration" 
-          />
-        </div>
+       
       </div>
     </section>
   );
