@@ -1,0 +1,121 @@
+
+.container {
+    padding: 40px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.content {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tabButton {
+    padding: 8px 50px;
+    background-color: #f1f1f1;
+    color: black;
+    border: 1px solid #ccc;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.activeTab {
+    background-color: #0F1A2E;
+    color: white;
+    font-weight: bold;
+}
+
+/* Titles */
+.subtitle {
+    font-size: 1.3rem;
+    color: grey;
+    margin-bottom: 0;
+}
+
+.title {
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: black;
+}
+
+  /* Steps with vertical line and bullets */
+  .stepList {
+    list-style: none;
+    position: relative;
+    padding-left: 20px;
+    margin: 20px 0;
+  
+
+  }
+  
+  .stepItem {
+    position: relative;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    margin-right: 5px;
+   
+  }
+  
+  .stepItem::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 4px;
+    height: 12px;
+    width: 12px;
+    background-color: black;
+    border-radius: 50%;
+  }
+  
+  .stepItem:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 15px;
+    width: 2px;
+    height: calc(100% + 8px);
+    background-color: black;
+  }
+
+/* Button */
+.button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background-color: #e65100;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: white;
+    color: #e65100;
+    box-shadow: 0 0 0 2px #e65100 inset;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tabButton {
+        width: 100%;
+    }
+}
