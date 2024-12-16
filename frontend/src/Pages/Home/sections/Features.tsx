@@ -37,8 +37,7 @@ const FeaturesMain: React.FC = () => {
     <section className={styles.container}>
       <div
         className={styles.image}
-        style={{ backgroundImage: `url(${imageUrl})` }}
-      ></div>
+        style={{ backgroundImage: `url(${imageUrl})` }}></div>
       <div className={styles.content}>
         <div className={styles.tabs}>
           <button

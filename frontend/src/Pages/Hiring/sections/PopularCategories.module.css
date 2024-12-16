@@ -1,0 +1,130 @@
+/* Section container styling */
+.section {
+    padding: 20px 15px;
+    background-color: #E1E1E1;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  
+  .titleContainer {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: gray;
+    margin-bottom: 5px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #3E6082;
+  }
+  
+  .cardContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 20px;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 190px;
+    perspective: 500px;
+  
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  .image {
+    height: 120px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+  }
+  
+  .cardTitle {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+  
+  .linkContainer {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .link {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #e65100;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  .link:hover {
+    color: #3E6082;
+  }
+  
+  .arrow {
+    font-size: 1.2rem;
+    margin-left: 5px;
+    transition: margin-left 0.3s;
+  }
+  
+  .link:hover .arrow {
+    margin-left: 10px;
+  }
+  
+  /* Smooth drag effect */
+  .cardContainer .card {
+    will-change: transform;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .cardContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .title {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cardContainer {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .subtitle {
+      font-size: 1rem;
+    }
+  
+    .link {
+      font-size: 0.9rem;
+    }
+  }
+  

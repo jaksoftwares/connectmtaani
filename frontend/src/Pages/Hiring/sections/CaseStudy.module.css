@@ -1,0 +1,115 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .carouselSection {
+    position: relative;
+    height: 500px;
+    color: white;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .backgroundImage {
+    background: url("/home/contract-image.png") no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .carouselContent {
+    position: relative;
+    padding: 20px;
+    margin-top: 100px;
+  }
+  
+  .caseStudyTitle {
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    color: white;
+  }
+  
+  .carouselList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .carouselItem {
+    display: none;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .carouselItem.active {
+    display: block;
+  }
+  
+  .carouselHeadline {
+    font-size: 2.7rem;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: bolder;
+  }
+  
+  .carouselDescription {
+    font-size: 1.4rem;
+    color: white;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+
+
+
+
+
+  
+  /* Responsive Media Queries */
+  @media (max-width: 768px) {
+    .carouselHeadline {
+      font-size: 1.8rem;
+    }
+  
+    .carouselDescription {
+      font-size: 1rem;
+    }
+  
+    .caseStudyTitle {
+      font-size: 1.2rem;
+    }
+  
+    .assistanceTitle {
+      font-size: 1.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .carouselHeadline {
+      font-size: 1.4rem;
+    }
+  
+    .carouselDescription {
+      font-size: 0.9rem;
+    }
+  
+    .buttonGroup {
+      flex-direction: column;
+      gap: 10px;
+    }
+}
