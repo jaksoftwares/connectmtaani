@@ -4,7 +4,7 @@ import Footer from '../../Components/Common/Footer/Footer';
 import HeroSection from './sections/HeroSection';
 import WhyChooseConnect from '../../Pages/Hiring/sections/WhyChoseConnect';
 import FAQSection from '../../Pages/Hiring/sections/FAQSection';
-
+import TestimonialCarousel from './sections/Testimonials';
 import GetStarted from '../../Pages/Hiring/sections/GetStarted';
 import ExtraAssistance from '../../Pages/Hiring/sections/ExtraAssistance';
 
@@ -18,10 +18,10 @@ const LandingPage: React.FC = () => {
        <HeroSection />
        <WhyChooseConnect />
        <FAQSection />
-  
-      <GetStarted />
-      <ExtraAssistance /> 
-      <Footer />
+       <TestimonialCarousel />
+       <GetStarted />
+       <ExtraAssistance /> 
+       <Footer />
     </div>
   );
 };
