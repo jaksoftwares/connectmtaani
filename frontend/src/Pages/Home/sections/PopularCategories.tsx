@@ -38,7 +38,7 @@ const PopularCategories: React.FC = () => {
           <CategoryCard key={index} icon={category.icon} title={category.title} />
         ))}
       </div>
-      <a href="/popularjobcategories" className="text-orange-600 underline mt-5 inline-block">See all Categories</a>
+      <a href="/PopularCategories" className="text-orange-600 underline mt-5 inline-block">See all Categories</a>
     </div>
   );
 };

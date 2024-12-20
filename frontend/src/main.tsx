@@ -13,7 +13,7 @@ import ForgotPassword from './Pages/Auth/ForgotPassword/ForgotPassword';
 import PasswordReset from './Pages/Auth/PasswordReset/Passwordreset';
 import ResourcesPage from './Pages/Resources/Resources';
 import BlogPage from './Pages/Resources/sections/blogpage';
-import PopularJobCategories from './Pages/jobcategories/popularCategories';
+import PopularCategories from './Pages/Home/sections/PopularCategories';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -29,7 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/password-reset" element={<PasswordReset/>}/>
         <Route path="/Resources" element={<ResourcesPage/>}/>
         <Route path="/blogs" element={<BlogPage/>}/>
-        <Route path="/popularjobcategories" element={<PopularJobCategories/>}/>
+        <Route path="/popularjobcategories" element={<PopularCategories/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
