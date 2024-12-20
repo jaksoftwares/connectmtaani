@@ -9,11 +9,11 @@ const Navbar: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="flex justify-between items-center bg-white px-8 py-3 shadow-md sticky top-0 z-50">
+    <nav className="flex justify-between items-center bg-white  shadow-md sticky top-0 z-50">
       {/* Left Nav */}
-      <div className="flex items-center space-x-10">
+      <div className="flex  space-x-4 bg-white-700 h-20">
         {/* Logo */}
-        <a href="/" className="text-2xl font-bold text-gray-800">
+        <a href="/" className="text-3xl font-bold text-gray-800 px-8 py-5 text-center">
           ConnectMtaani
         </a>
 
@@ -26,11 +26,11 @@ const Navbar: React.FC = () => {
           <li>
             <a
               href="/hiring"
-              className={`text-lg font-medium transition-all duration-300 ${
+              className={`text-xl font-medium transition-all duration-300 ${
                 isActive('/hiring')
-                  ? 'text-orange-500 border-orange-500'
+                  ? 'text-orange-500 border-orange-500 '
                   : 'text-gray-800'
-              } hover:text-blue-500 hover:bg-blue-50 px-3 py-2 border-l-2`}
+              } hover:text-blue-500 hover:bg-blue-50 px-3 py-2 border-l-2  `}
             >
               For Hiring
             </a>
@@ -65,17 +65,17 @@ const Navbar: React.FC = () => {
       {/* Right Nav */}
       <div className="flex items-center space-x-4">
         {/* Buttons */}
-        <div className="hidden md:flex space-x-4">
+        <div className="hidden md:flex ">
           <a
             href="/login"
-            className="text-blue-600 font-semibold px-5 py-2 border border-transparent hover:bg-blue-50 rounded-md flex items-center space-x-2"
+            className="text-blue-600 font-semibold px-5 py-2 border border-transparent hover:bg-blue-50 rounded-md flex items-center space-x-2 text-xl" 
           >
             <span>Login</span>
             <i className="fas fa-sign-in-alt" />
           </a>
           <a
             href="/signup"
-            className="bg-orange-500 text-white font-semibold px-5 py-2 rounded-md hover:bg-orange-600"
+            className="bg-orange-500 text-white font-semibold text-center py-5 text-xl  hover:bg-orange-600 h-20 w-60"
           >
             Sign Up for Free
           </a>
