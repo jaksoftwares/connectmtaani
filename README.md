@@ -1,5 +1,6 @@
-ConnectMtaani: Project Setup Guide
-Welcome to ConnectMtaani, a platform designed to connect informal and blue-collar workers with short-term job opportunities. This README provides all the necessary steps for setting up and running the project locally for development and collaboration.
+Welcome to ConnectMtaani, a platform designed to connect informal and blue-collar workers with short-term job opportunities. 
+
+This README provides all the necessary steps for setting up and running the project locally for development and collaboration.
 
 Table of Contents
 Prerequisites

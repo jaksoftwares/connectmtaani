@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styles from "./Features.module.css";
 
 const FeaturesMain: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"Hiring" | "Workers">("Hiring");
@@ -15,7 +14,7 @@ const FeaturesMain: React.FC = () => {
         "Top-of-the-line technology and automation for managing all staffing needs",
       ],
       buttonText: "START HIRING NOW",
-      imageUrl: "/public/home/contract-image.png", 
+      imageUrl: "/home/contract-image.png",
     },
     Workers: {
       title: "Find Opportunities and Connect with Employers, Instantly",
@@ -34,40 +33,56 @@ const FeaturesMain: React.FC = () => {
   const { title, description, points, buttonText, imageUrl } = content[activeTab];
 
   return (
-    <section className={styles.container}>
+    <section className="flex flex-col md:flex-row items-center justify-between p-10 bg-gray-100">
+      {/* Image Section */}
       <div
-        className={styles.image}
-        style={{ backgroundImage: `url(${imageUrl})` }}></div>
-      <div className={styles.content}>
-        <div className={styles.tabs}>
+        className="flex-1 h-96 mb-8 md:mb-0 md:mr-10 rounded-lg bg-cover bg-center"
+        style={{ backgroundImage: `url(${imageUrl})` }}
+      ></div>
+
+      {/* Content Section */}
+      <div className="flex-1">
+        {/* Tabs */}
+        <div className="flex space-x-4 mb-6">
           <button
-            className={`${styles.tabButton} ${
-              activeTab === "Hiring" ? styles.activeTab : ""
+            className={`flex-1 py-2 px-4 text-center text-sm md:text-base border rounded ${
+              activeTab === "Hiring"
+                ? "bg-[#123456] text-white border-[#123456]"
+                : "bg-gray-300 text-[#123456] border-gray-300"
             }`}
             onClick={() => setActiveTab("Hiring")}
           >
             Hiring
           </button>
           <button
-            className={`${styles.tabButton} ${
-              activeTab === "Workers" ? styles.activeTab : ""
+            className={`flex-1 py-2 px-4 text-center text-sm md:text-base border rounded ${
+              activeTab === "Workers"
+                ? "bg-[#123456] text-white border-[#123456]"
+                : "bg-gray-300 text-[#123456] border-gray-300"
             }`}
             onClick={() => setActiveTab("Workers")}
           >
             Workers
           </button>
         </div>
-        <h2 className={styles.title}>{title}</h2>
-        <p className={styles.description}>{description}</p>
-        <ul className={styles.list}>
+
+        {/* Title and Description */}
+        <h2 className="text-2xl md:text-3xl font-bold text-[#123456] mb-4">{title}</h2>
+        <p className="text-gray-700 text-sm md:text-base mb-6 leading-relaxed">{description}</p>
+
+        {/* Points List */}
+        <ul className="list-none space-y-2 mb-6">
           {points.map((point, index) => (
-            <li key={index} className={styles.listItem}>
-              <i className="fas fa-check-circle"></i> {point}
+            <li key={index} className="flex items-start text-gray-800 text-sm md:text-base">
+              <i className="fas fa-check-circle text-[#123456] mr-2"></i>
+              {point}
             </li>
           ))}
         </ul>
-        <button className={styles.ctaButton}>
-          {buttonText} <i className="fas fa-arrow-right"></i>
+
+        {/* Call to Action Button */}
+        <button className="px-5 py-3 text-sm md:text-base text-white bg-[#e65100] rounded shadow hover:bg-[#ff7600] transition">
+          {buttonText} <i className="fas fa-arrow-right ml-2"></i>
         </button>
       </div>
     </section>
