@@ -13,8 +13,10 @@ import ForgotPassword from './Pages/Auth/ForgotPassword/ForgotPassword';
 import PasswordReset from './Pages/Auth/PasswordReset/Passwordreset';
 import ResourcesPage from './Pages/Resources/Resources';
 import BlogPage from './Pages/Resources/sections/blogpage';
-import PopularCategories from './Pages/Home/sections/PopularCategories';
-
+import PopularJobCategories from './Pages/JobCategories/popularCategories';
+import EmployersDashboard from './Pages/Dashboards/Hiring/HiringDashboardPage';
+import JobSeekersDashboard from './Pages/Dashboards/Workers/WorkersDashboardPage';
+import AdminLayout from './Pages/Dashboards/Admin/AdminLayout';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -29,7 +31,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/password-reset" element={<PasswordReset/>}/>
         <Route path="/Resources" element={<ResourcesPage/>}/>
         <Route path="/blogs" element={<BlogPage/>}/>
-        <Route path="/popularjobcategories" element={<PopularCategories/>}/>
+        <Route path="/hireworkers" element={<EmployersDashboard/>}/>
+        <Route path="/popularjobcategories" element={<PopularJobCategories/>}/>
+        <Route path="/findwork" element={<JobSeekersDashboard/>}/>
+        <Route path="/admin" element={<AdminLayout/>}/>
+        <Route path="/admin" element={<AdminLayout/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

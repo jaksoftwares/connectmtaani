@@ -41,7 +41,7 @@ const PopularCategories: React.FC = () => {
 
         {/* Link Section */}
         <div className={styles.linkContainer}>
-          <a href="/categories" className={styles.link}>
+          <a href="/popularjobcategories" className={styles.link}>
             Browse All Categories <i className="fas fa-arrow-right"></i>
           </a>
         </div>
