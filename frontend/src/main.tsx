@@ -17,6 +17,10 @@ import PopularJobCategories from './Pages/JobCategories/popularCategories';
 import EmployersDashboard from './Pages/Dashboards/Hiring/HiringDashboardPage';
 import JobSeekersDashboard from './Pages/Dashboards/Workers/WorkersDashboardPage';
 import AdminLayout from './Pages/Dashboards/Admin/AdminLayout';
+import SignUpChoices from './Pages/Auth/Signup/signupchoices';
+import AuthNavbar from './Pages/Auth/authnavbar';
+import AuthFooter from './Pages/Auth/authfooter';
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -24,19 +28,22 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/dashboard" element={<DashboardPage/>}/>
-        <Route path="/hiring" element={<HiringPage/>}/>
-        <Route path="/workers" element={<WorkerPage/>}/>
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/hiring" element={<HiringPage />} />
+        <Route path="/workers" element={<WorkerPage />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/password-reset" element={<PasswordReset/>}/>
-        <Route path="/Resources" element={<ResourcesPage/>}/>
-        <Route path="/blogs" element={<BlogPage/>}/>
-        <Route path="/hireworkers" element={<EmployersDashboard/>}/>
-        <Route path="/popularjobcategories" element={<PopularJobCategories/>}/>
-        <Route path="/findwork" element={<JobSeekersDashboard/>}/>
-        <Route path="/admin" element={<AdminLayout/>}/>
-        <Route path="/admin" element={<AdminLayout/>}/>
+        <Route path="/password-reset" element={<PasswordReset />} />
+        <Route path="/resources" element={<ResourcesPage />} />
+        <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/hireworkers" element={<EmployersDashboard />} />
+        <Route path="/popularjobcategories" element={<PopularJobCategories />} />
+        <Route path="/findwork" element={<JobSeekersDashboard />} />
+        <Route path="/admin" element={<AdminLayout />} />
+        <Route path="/signupcheck" element={<SignUpChoices />} />
+        <Route path="/authnav" element={<AuthNavbar accountType="client" />} />
+        <Route path="/authFooter" element={<AuthFooter />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
+

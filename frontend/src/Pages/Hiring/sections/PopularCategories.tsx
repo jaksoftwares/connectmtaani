@@ -1,53 +1,55 @@
-import React from 'react';
-import styles from './PopularCategories.module.css';
+import React from "react";
+
+interface CategoryCardProps {
+  icon: React.ReactNode;
+  title: string;
+}
+
+const CategoryCard: React.FC<CategoryCardProps> = ({ icon, title }) => {
+  return (
+    <div className="bg-white p-5 rounded-lg shadow-lg text-center">
+      <div className="text-2xl mb-2">{icon}</div>
+      <p className="text-gray-700">{title}</p>
+    </div>
+  );
+};
 
 const PopularCategories: React.FC = () => {
   const categories = [
-    { title: "Construction", image: "/home/handbrush.png" },
-    { title: "Tech Support", image: "/home/handbrush.png" },
-    { title: "Creative Design", image: "/home/handbrush.png" },
-    { title: "Education", image: "/home/handbrush.png" },
-    { title: "Healthcare", image: "/home/handbrush.png" },
-    { title: "Finance", image: "/home/handbrush.png" },
-    { title: "Marketing", image: "/home/handbrush.png" },
-    { title: "Retail", image: "/home/handbrush.png" },
-    { title: "Transport", image: "/home/handbrush.png" },
-    { title: "Event Planning", image: "/home/handbrush.png" },
-    { title: "Hospitality", image: "/home/handbrush.png" },
-    { title: "Manufacturing", image: "/home/handbrush.png" },
+    { icon: <i className="fas fa-hammer"></i>, title: "Construction & Manual Labour" },
+    { icon: <i className="fas fa-wrench"></i>, title: "Plumbing" },
+    { icon: <i className="fas fa-paint-roller"></i>, title: "Painting" },
+    { icon: <i className="fas fa-bolt"></i>, title: "Electrical" },
+    { icon: <i className="fas fa-tree"></i>, title: "Landscaping" },
+    { icon: <i className="fas fa-tools"></i>, title: "Carpentry" },
+    { icon: <i className="fas fa-hard-hat"></i>, title: "Safety" },
+    { icon: <i className="fas fa-brush"></i>, title: "Cleaning" },
+    { icon: <i className="fas fa-plug"></i>, title: "Installation" },
+    { icon: <i className="fas fa-cogs"></i>, title: "Maintenance" },
+    { icon: <i className="fas fa-truck"></i>, title: "Transport" },
+    { icon: <i className="fas fa-recycle"></i>, title: "Recycling" },
   ];
 
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-        {/* Title Section */}
-        <div className={styles.titleContainer}>
-          <p className={styles.subtitle}>Skills for all your job requirements</p>
-          <h1 className={styles.title}>Popular Categories</h1>
+    <div className="text-center p-5 bg-[#E1E1E1]">
+      {/* Title Section */}
+      <div className="text-center mb-5">
+          <p className="text-gray-500 text-xl mb-1">Skills for all your job requirements</p>
+          <h1 className="text-3xl font-bold text-[#3E6082]">Popular Categories</h1>
         </div>
 
-        {/* Categories Section */}
-        <div className={styles.cardContainer}>
-          {categories.map((category, index) => (
-            <div key={index} className={styles.card}>
-              <div
-                className={styles.image}
-                style={{ backgroundImage: `url(${category.image})` }}
-              ></div>
-              <p className={styles.cardTitle}>{category.title}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Link Section */}
-        <div className={styles.linkContainer}>
-          <a href="/popularjobcategories" className={styles.link}>
-            Browse All Categories <i className="fas fa-arrow-right"></i>
-          </a>
-        </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
+        {categories.map((category, index) => (
+          <CategoryCard key={index} icon={category.icon} title={category.title} />
+        ))}
       </div>
-    </section>
+      <a href="/popularjobcategories" className="text-orange-600 underline mt-5 inline-block text-xl">
+    See all Categories <i className="fas fa-arrow-right ml-4 "></i>
+</a>
+
+    </div>
   );
 };
 
 export default PopularCategories;
+

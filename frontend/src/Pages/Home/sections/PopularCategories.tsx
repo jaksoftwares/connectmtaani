@@ -31,16 +31,25 @@ const PopularCategories: React.FC = () => {
   ];
 
   return (
-    <div className="text-center p-5">
-      <h2 className="text-2xl font-bold mb-5">Popular Categories</h2>
+    <div className="text-center p-5 bg-[#E1E1E1]">
+      {/* Title Section */}
+      <div className="text-center mb-5">
+          <p className="text-gray-500 text-xl mb-1">Skills for all your job requirements</p>
+          <h1 className="text-3xl font-bold text-[#3E6082]">Popular Categories</h1>
+        </div>
+
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
         {categories.map((category, index) => (
           <CategoryCard key={index} icon={category.icon} title={category.title} />
         ))}
       </div>
-      <a href="/popularjobcategories" className="text-orange-600 underline mt-5 inline-block">See all Categories</a>
+      <a href="/popularjobcategories" className="text-orange-600 underline mt-5 inline-block text-xl">
+    See all Categories <i className="fas fa-arrow-right ml-4 "></i>
+</a>
+
     </div>
   );
 };
 
 export default PopularCategories;
+
