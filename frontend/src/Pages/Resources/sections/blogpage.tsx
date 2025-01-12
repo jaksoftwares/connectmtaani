@@ -5,7 +5,7 @@ const BlogPage = () => {
     return (
     <>
     <Navbar/>
-      <section className="bg-gray-100 min-h-screen py-8 px-4">
+      <section className="bg-gray-100 min-h-screen py-8 px-4 ">
         {/* Blog Header */}
         <header className="max-w-4xl mx-auto text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800">

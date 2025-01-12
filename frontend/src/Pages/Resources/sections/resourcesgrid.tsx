@@ -84,7 +84,7 @@ const ResourcesGrid = () => {
         ];
   
     return (
-      <section className="bg-white py-8 px-4">
+      <section className="bg-white py-8 px-4 mx-16">
         <h2 className="text-center text-gray-800 text-3xl font-semibold mb-8">
           Transforming how work gets done
         </h2>
