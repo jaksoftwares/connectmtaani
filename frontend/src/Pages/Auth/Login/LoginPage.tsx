@@ -36,11 +36,11 @@ const LoginPage: React.FC = () => {
     </ul>
   </nav>
 
-  <div className="flex bg-gradient-to-r from-blue-500 to-indigo-600 min-h-screen">
+  <div className="flex bg-gradient-to-r from-blue-500 to-indigo-600 min-h-[83vh]">
     <main className="flex-grow flex justify-center items-center">
     {/* Left Section */}
-    <div className="flex items-center justify-center w-full ml-24">
-      <div className="bg-black bg-opacity-60 p-6  text-center">
+    <div className="flex items-center justify-center w-full h-full ml-24">
+      <div className="bg-black bg-opacity-60 p-6  text-center h-full">
         <h2 className="text-4xl font-bold text-white mb-4">Welcome Back!</h2>
         <p className="text-lg text-gray-300">
           Join a thriving community of professionals and opportunities. Your dream job is just a click away.
@@ -54,8 +54,8 @@ const LoginPage: React.FC = () => {
     </div>
 
     {/* Right Section */}
-    <div className="flex items-center w-full">
-    <form className="bg-white p-8 shadow-lg max-w-3xl w-full " onSubmit={handleSubmit}  >
+    <div className="flex items-center w-full h-full">
+    <form className="bg-white p-8 shadow-lg max-w-3xl w-full h-full " onSubmit={handleSubmit}  >
         <h2 className="text-2xl font-bold text-gray-800 text-center mb-4">
           Login to Your Account
         </h2>
