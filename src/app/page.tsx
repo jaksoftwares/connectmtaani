@@ -1,4 +1,4 @@
-import LandingPage from "./Home/LandingPage";
+import LandingPage from "./Home/page";
 
 export default function Home() {
   return (
