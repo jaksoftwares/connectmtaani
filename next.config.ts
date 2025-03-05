@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["via.placeholder.com"],
   },
-  distDir: "dist", 
+  // Remove `distDir: "dist"` so Next.js uses default `.next/`
 };
 
 export default nextConfig;
