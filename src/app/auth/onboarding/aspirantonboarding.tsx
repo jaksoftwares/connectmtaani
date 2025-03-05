@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import OnboardingNavbar from './onboardingnav';
+"use client";
+
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import OnboardingNavbar from "./onboardingnav";
 
 const AspirantOnboardingDashboard: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
 
   // Step data (you can modify or extend this based on your needs)
   const steps = [
-    { title: 'Welcome to ConnectMtaani', content: 'Let\'s start by getting to know you.' },
-    { title: 'Personal Information', content: 'Fill in your personal details to continue.' },
-    { title: 'Skills & Experience', content: 'Add your skills and work experience.' },
-    { title: 'Job Preferences', content: 'Select your preferred job criteria.' },
-    { title: 'Face Verification', content: 'Verify your identity with face recognition.' },
-    { title: 'Completed', content: 'Congratulations! Your onboarding is complete.' },
+    { title: "Welcome to ConnectMtaani", content: "Let's start by getting to know you." },
+    { title: "Personal Information", content: "Fill in your personal details to continue." },
+    { title: "Skills & Experience", content: "Add your skills and work experience." },
+    { title: "Job Preferences", content: "Select your preferred job criteria." },
+    { title: "Face Verification", content: "Verify your identity with face recognition." },
+    { title: "Completed", content: "Congratulations! Your onboarding is complete." },
   ];
 
   const handleNext = () => {
@@ -29,8 +31,7 @@ const AspirantOnboardingDashboard: React.FC = () => {
   };
 
   const handleFinish = () => {
-    // Redirect to the dashboard after finishing
-    navigate('/dashboard');
+    router.push("/dashboard");
   };
 
   return (
@@ -45,7 +46,7 @@ const AspirantOnboardingDashboard: React.FC = () => {
             {steps.map((step, index) => (
               <li
                 key={index}
-                className={`mb-4 ${currentStep === index + 1 ? 'text-blue-600 font-semibold' : ''}`}
+                className={`mb-4 ${currentStep === index + 1 ? "text-blue-600 font-semibold" : ""}`}
               >
                 {`Step ${index + 1}: ${step.title}`}
               </li>
@@ -120,7 +121,11 @@ const AspirantOnboardingDashboard: React.FC = () => {
             )}
 
             {/* Step 6: Completion */}
-            {currentStep === 6 && <p className="text-xl font-semibold text-green-500">Congratulations, you've completed the onboarding process!</p>}
+            {currentStep === 6 && (
+              <p className="text-xl font-semibold text-green-500">
+                Congratulations, you&apos;ve completed the onboarding process!
+              </p>
+            )}
           </div>
         </div>
       </div>

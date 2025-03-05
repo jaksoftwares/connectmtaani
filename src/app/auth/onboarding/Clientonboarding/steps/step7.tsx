@@ -7,7 +7,7 @@ const Step7Completion: React.FC = () => (
 
     {/* Completion Message */}
     <p className="text-xl font-semibold text-green-500">
-      Congratulations, you've completed the onboarding process!
+      Congratulations, you&apos;ve completed the onboarding process!
     </p>
   </div>
 );

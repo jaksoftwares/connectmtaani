@@ -16,7 +16,7 @@ const Jobs: React.FC = () => {
 
       {/* Add Job Button */}
       <div className="mb-4">
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
           Add Job
         </button>
       </div>
@@ -29,7 +29,7 @@ const Jobs: React.FC = () => {
           job.company,
           job.location,
           job.status,
-          <div className="flex space-x-2">
+          <div key={job.id} className="flex space-x-2">
             <button className="text-blue-500 hover:text-blue-700">
               <FiEdit size={18} />
             </button>

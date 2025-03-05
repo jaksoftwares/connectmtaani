@@ -1,4 +1,4 @@
-import React from 'react';
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
   return (
@@ -16,21 +16,19 @@ const Navbar: React.FC = () => {
         />
 
         {/* Notifications Button */}
-        <button
-          className="relative"
-          aria-label="Notifications"
-        >
+        <button className="relative" aria-label="Notifications">
           <span className="material-icons text-gray-600">notifications</span>
-          <span className="absolute top-0 right-0 inline-block w-2 h-2 bg-red-500 rounded-full" />
+          <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full" />
         </button>
 
         {/* User Profile */}
         <div className="flex items-center gap-2">
-          <img
+          <Image
             src="/path/to/avatar.jpg"
             alt="Admin Avatar"
-            className="w-8 h-8 rounded-full"
-            aria-label="Admin Avatar"
+            width={32}
+            height={32}
+            className="rounded-full"
           />
           <span className="text-sm font-medium text-gray-700">Admin</span>
         </div>

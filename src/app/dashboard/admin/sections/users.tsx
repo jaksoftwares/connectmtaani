@@ -14,9 +14,9 @@ const Users: React.FC = () => {
     <div className="bg-white shadow-md rounded-lg p-6">
       <h2 className="text-lg font-bold text-gray-800 mb-4">User Management</h2>
 
-      {/* Add User Button (You can link it to a modal or another page to add a user) */}
+      {/* Add User Button */}
       <div className="mb-4">
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
           Add User
         </button>
       </div>
@@ -29,7 +29,7 @@ const Users: React.FC = () => {
           user.email,
           user.role,
           user.status,
-          <div className="flex space-x-2">
+          <div key={user.id} className="flex space-x-2">
             <button className="text-blue-500 hover:text-blue-700">
               <FiEdit size={18} />
             </button>

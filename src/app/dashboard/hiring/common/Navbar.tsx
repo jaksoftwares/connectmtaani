@@ -1,10 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image'; // Import Next.js Image component
 import ProfileSettings from '../sections/ProfileSettings';
 
 const Navbar: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [newNotifications, setNewNotifications] = useState(true);
   const [showProfileSettings, setShowProfileSettings] = useState(false);
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <div>
@@ -25,17 +39,21 @@ const Navbar: React.FC = () => {
             onClick={() => setNewNotifications(false)} // Stops animation on click
           >
             <span className="material-icons text-gray-600">notifications</span>
-            <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1">3</span>
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">3</span>
           </button>
 
           {/* Profile Picture with Dropdown */}
-          <div className="relative">
-            <img
-              src="https://via.placeholder.com/40"
-              alt="Profile"
-              className="w-10 h-10 rounded-full cursor-pointer"
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            />
+          <div className="relative" ref={dropdownRef}>
+            <button onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+              <Image
+                src="https://via.placeholder.com/40" // Replace with dynamic image from user data
+                alt="Profile"
+                width={40}
+                height={40}
+                className="rounded-full object-cover"
+                priority // Ensures image loads quickly
+              />
+            </button>
             {isDropdownOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg">
                 <ul>
