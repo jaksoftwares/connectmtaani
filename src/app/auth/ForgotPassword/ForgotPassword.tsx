@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Navbar from '../../../Components/Common/Navbar/Navbar';
-import Footer from '../../../Components/Common/Footer/Footer';
 
 const ForgotPassword: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -16,7 +14,6 @@ const ForgotPassword: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-r from-blue-500 to-indigo-600">
-      <Navbar />
       <div className="flex flex-1 items-center justify-center p-8">
         <form
           className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md"
@@ -65,7 +62,6 @@ const ForgotPassword: React.FC = () => {
           </div>
         </form>
       </div>
-      <Footer />
     </div>
   );
 };
