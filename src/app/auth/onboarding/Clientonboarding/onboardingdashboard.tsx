@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import OnboardingNavbar from './common/OnboardingHeader';
 import OnboardingSidebar from './common/sidebar';
 import FooterNavigation from './common/OnboardingProgress';
@@ -13,7 +15,7 @@ import Step6FaceVerification from './steps/step6';
 import Step7Completion from './steps/step7';
 
 const ClientOnboardingDashboard: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter(); // ✅ Replaces useNavigate()
   const [currentStep, setCurrentStep] = useState(1);
 
   // Step data
@@ -40,13 +42,12 @@ const ClientOnboardingDashboard: React.FC = () => {
   };
 
   const handleFinish = () => {
-    // Redirect to the dashboard after finishing
-    navigate('/dashboard');
+    router.push('/dashboard'); // ✅ Uses Next.js navigation
   };
 
   return (
     <>
-      <OnboardingNavbar accountType={''} userName={''} />
+      <OnboardingNavbar accountType="" userName="" />
 
       <div className="flex min-h-screen bg-gray-50">
         {/* Sidebar */}
@@ -55,9 +56,7 @@ const ClientOnboardingDashboard: React.FC = () => {
         {/* Main Content Area */}
         <div className="w-3/4 p-8">
           {/* Onboarding Step Content */}
-          <div className="mb-6">
-            {steps[currentStep - 1].component}
-          </div>
+          <div className="mb-6">{steps[currentStep - 1].component}</div>
         </div>
       </div>
 
