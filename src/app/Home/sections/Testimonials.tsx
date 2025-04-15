@@ -1,94 +1,101 @@
-"use client"; // Mark this component as a Client Component
+"use client";
 
 import React, { useState } from "react";
-import Image from "next/image"; // Import the Next.js Image component
+import Image from "next/image";
 
-interface TestimonialProps {
+interface Testimonial {
+  message: string;
   name: string;
   position: string;
   company: string;
-  message: string;
-  imageUrl: string; // Only string is needed since we're using public directory
+  imageUrl: string;
+  rating: number;
 }
 
-const testimonials: TestimonialProps[] = [
+const testimonials: Testimonial[] = [
   {
-    name: "Jane Mwangi",
+    message: "ConnectMtaani helped us find skilled workers on short notice. The process was quick and the quality was excellent.",
+    name: "Jane Muthoni",
+    position: "HR Manager",
+    company: "BuildRight Ltd",
+    imageUrl: "/images/testimonial1.jpg",
+    rating: 4,
+  },
+  {
+    message: "This platform is a game-changer for labor sourcing. Very reliable and efficient service.",
+    name: "David Otieno",
+    position: "Operations Lead",
+    company: "Kenya Movers",
+    imageUrl: "/images/testimonial2.jpg",
+    rating: 5,
+  },
+  {
+    message: "The support team was extremely helpful throughout our hiring process. Highly recommended!",
+    name: "Mary Wambui",
     position: "Project Manager",
-    company: "BrightSkills Contractors",
-    message:
-      "ConnecttMiami has completely transformed how we find skilled workers for our short-term projects. The platform is easy to use, and the support team is always there when we need them. We’ve connected with reliable, talented individuals who deliver quality work every time!",
-    imageUrl: "/images/profile.jpg", // Direct path to the image in the public directory
-  },
-  {
-    name: "John Doe",
-    position: "Operations Manager",
-    company: "BuildSmart Solutions",
-    message:
-      "Using ConnecttMiami has made it easier for us to quickly find and hire skilled workers for our various projects. The quality of talent is impressive, and the platform is very user-friendly.",
-    imageUrl: "/images/profile.jpg", // Direct path to the image in the public directory
-  },
-  {
-    name: "Emily Karanja",
-    position: "HR Director",
-    company: "TechConstruct Ltd.",
-    message:
-      "Our hiring process has never been smoother. ConnecttMiami provides access to a pool of highly skilled professionals, making our recruitment process fast and efficient.",
-    imageUrl: "/images/profile.jpg", // Direct path to the image in the public directory
+    company: "Nairobi Interiors",
+    imageUrl: "/images/testimonial3.jpg",
+    rating: 4,
   },
 ];
 
-const Testimonials: React.FC = () => {
+const TestimonialsSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const renderStars = (rating: number) => {
+    return Array.from({ length: 5 }).map((_, i) => (
+      <svg
+        key={i}
+        className={`w-5 h-5 ${i < rating ? "fill-yellow-400" : "fill-gray-300"}`}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.168L12 18.896l-7.334 3.864 1.4-8.168L.132 9.21l8.2-1.192z" />
+      </svg>
+    ));
+  };
 
   const handleDotClick = (index: number) => {
     setCurrentIndex(index);
   };
 
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, index) => (
-      <i
-        key={index}
-        className={`fas fa-star ${
-          index < rating ? "text-yellow-400" : "text-gray-300"
-        }`}
-      ></i>
-    ));
-  };
+  const current = testimonials[currentIndex];
 
   return (
-    <div className="text-center p-5 max-w-2xl mx-auto">
-      <h2 className="text-3xl font-bold text-gray-800 mb-5">
+    <div className="text-center px-4 sm:px-6 lg:px-8 py-12 w-full">
+      <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-8">
         Reliable Access To Talent for Your Labour Requirements
       </h2>
-      <div className="bg-gray-100 p-8 rounded-lg shadow-md mb-5">
-        <p className="text-lg text-gray-600 mb-5 leading-relaxed">
-          {testimonials[currentIndex].message}
+
+      <div className="bg-gray-100 p-6 sm:p-8 rounded-lg shadow-md mb-6 max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed">
+          {current.message}
         </p>
-        <div className="flex items-center mt-5">
-          <div className="rounded-full w-16 h-16 overflow-hidden">
+
+        <div className="flex flex-col sm:flex-row items-center text-left">
+          <div className="rounded-full w-20 h-20 overflow-hidden flex-shrink-0">
             <Image
-              src={testimonials[currentIndex].imageUrl}
-              alt={testimonials[currentIndex].name}
-              width={64}
-              height={64}
-              className="object-cover"
+              src={current.imageUrl}
+              alt={current.name}
+              width={80}
+              height={80}
+              className="object-cover w-full h-full"
             />
           </div>
-          <div className="ml-4">
-            <h3 className="text-xl font-semibold text-gray-800">
-              {testimonials[currentIndex].name}
-            </h3>
-            <p className="text-gray-600">
-              {testimonials[currentIndex].position},{" "}
-              {testimonials[currentIndex].company}
+
+          <div className="sm:ml-4 mt-4 sm:mt-0 text-center sm:text-left">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-800">{current.name}</h3>
+            <p className="text-gray-600 text-sm sm:text-base">
+              {current.position}, {current.company}
             </p>
           </div>
         </div>
-        <div className="flex mt-4 justify-center text-yellow-400">
-          {renderStars(4)} {/* Example: 4 out of 5 stars */}
+
+        <div className="flex mt-4 justify-center">
+          {renderStars(current.rating)}
         </div>
       </div>
+
       <div className="flex justify-center mb-5 space-x-2">
         {testimonials.map((_, index) => (
           <button
@@ -101,11 +108,12 @@ const Testimonials: React.FC = () => {
           />
         ))}
       </div>
-      <a href="#" className="text-orange-600 underline">
+
+      <a href="#" className="text-orange-600 underline text-sm sm:text-base">
         View Case Studies
       </a>
     </div>
   );
 };
 
-export default Testimonials;
+export default TestimonialsSection;

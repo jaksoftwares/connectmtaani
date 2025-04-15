@@ -1,41 +1,35 @@
-"use client"; 
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation'; // Updated imports
+import React, { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname(); // Get the current path
+  const pathname = usePathname();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
-  const isActive = (path: string) => pathname === path; // Check if the current path matches
+  const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="flex justify-between items-center bg-white shadow-md sticky top-0 z-50">
-      {/* Left Nav */}
-      <div className="flex space-x-4 bg-white-700 h-20">
+    <nav className="bg-white shadow-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
         {/* Logo */}
-        <Link href="/" className="text-3xl font-bold text-gray-800 px-8 py-5 text-center">
+        <Link
+          href="/"
+          className="text-2xl sm:text-3xl font-bold text-gray-800"
+        >
           ConnectMtaani
         </Link>
 
-        {/* Nav Links */}
-        <ul
-          className={`${
-            menuOpen
-              ? 'flex flex-col absolute top-[60px] left-0 w-full bg-white shadow-md'
-              : 'hidden md:flex'
-          } list-none space-x-8 md:space-x-8 md:static md:flex-row items-center`}
-        >
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex space-x-6 items-center">
           <li>
             <Link
               href="/hiring"
-              className={`text-xl font-medium transition-all duration-300 ${
-                isActive('/hiring')
-                  ? 'text-orange-500 border-orange-500'
-                  : 'text-gray-800'
-              } hover:text-blue-500 hover:bg-blue-50 px-3 py-2 border-l-2`}
+              className={`text-lg font-medium transition ${
+                isActive("/hiring") ? "text-orange-500" : "text-gray-800"
+              } hover:text-blue-600`}
             >
               For Hiring
             </Link>
@@ -43,11 +37,9 @@ const Header: React.FC = () => {
           <li>
             <Link
               href="/workers"
-              className={`text-lg font-medium transition-all duration-300 ${
-                isActive('/workers')
-                  ? 'text-orange-500 border-orange-500'
-                  : 'text-gray-800'
-              } hover:text-blue-500 hover:bg-blue-50 px-3 py-2 border-l-2`}
+              className={`text-lg font-medium transition ${
+                isActive("/workers") ? "text-orange-500" : "text-gray-800"
+              } hover:text-blue-600`}
             >
               For Workers
             </Link>
@@ -55,45 +47,98 @@ const Header: React.FC = () => {
           <li>
             <Link
               href="/resources"
-              className={`text-lg font-medium transition-all duration-300 ${
-                isActive('/resources')
-                  ? 'text-orange-500 border-orange-500'
-                  : 'text-gray-800'
-              } hover:text-blue-500 hover:bg-blue-50 px-3 py-2 border-l-2`}
+              className={`text-lg font-medium transition ${
+                isActive("/resources") ? "text-orange-500" : "text-gray-800"
+              } hover:text-blue-600`}
             >
               Resources
             </Link>
           </li>
         </ul>
-      </div>
 
-      {/* Right Nav */}
-      <div className="flex items-center space-x-4">
-        {/* Buttons */}
-        <div className="hidden md:flex">
+        {/* Desktop Buttons */}
+        <div className="hidden md:flex space-x-4">
           <Link
             href="/auth/login"
-            className="text-blue-600 font-semibold px-5 py-2 border border-transparent hover:bg-blue-50 rounded-md flex items-center space-x-2 text-xl"
+            className="text-blue-600 font-medium px-4 py-2 hover:bg-blue-50 rounded-md"
           >
-            <span>Login</span>
-            <i className="fas fa-sign-in-alt" />
+            Login
           </Link>
           <Link
             href="/auth/signup"
-            className="bg-orange-500 text-white font-semibold text-center py-5 text-xl hover:bg-orange-600 h-20 w-60"
+            className="bg-orange-500 text-white px-6 py-2 rounded-md font-semibold hover:bg-orange-600 transition"
           >
             Sign Up for Free
           </Link>
         </div>
 
-        {/* Hamburger Menu */}
+        {/* Hamburger Icon */}
         <div
-          className="text-2xl cursor-pointer md:hidden"
+          className="md:hidden text-3xl text-gray-700 cursor-pointer"
           onClick={toggleMenu}
         >
           ☰
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-white shadow-md border-t border-gray-200">
+          <ul className="flex flex-col px-6 py-4 space-y-4">
+            <li>
+              <Link
+                href="/hiring"
+                className={`text-base font-medium ${
+                  isActive("/hiring") ? "text-orange-500" : "text-gray-800"
+                } hover:text-blue-600`}
+                onClick={toggleMenu}
+              >
+                For Hiring
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/workers"
+                className={`text-base font-medium ${
+                  isActive("/workers") ? "text-orange-500" : "text-gray-800"
+                } hover:text-blue-600`}
+                onClick={toggleMenu}
+              >
+                For Workers
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/resources"
+                className={`text-base font-medium ${
+                  isActive("/resources") ? "text-orange-500" : "text-gray-800"
+                } hover:text-blue-600`}
+                onClick={toggleMenu}
+              >
+                Resources
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/auth/login"
+                className="text-blue-600 font-medium"
+                onClick={toggleMenu}
+              >
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/auth/signup"
+                className="bg-orange-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-600 transition"
+                onClick={toggleMenu}
+              >
+                Sign Up for Free
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };
