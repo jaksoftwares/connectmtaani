@@ -1,7 +1,7 @@
-"use client"; // Mark this component as a Client Component
+"use client"; 
 
-import Link from 'next/link'; // Use Next.js Link for client-side navigation
-import Image from 'next/image'; // Use Next.js Image for optimized images
+import Link from 'next/link'; 
+import Image from 'next/image'; 
 
 const BlogPage = () => {
   return (
@@ -21,10 +21,10 @@ const BlogPage = () => {
         {/* Featured Image */}
         <div className="max-w-4xl mx-auto mb-8">
           <Image
-            src="https://via.placeholder.com/800x400" // Replace with the actual image URL
+            src="https://via.placeholder.com/800x400" 
             alt="Blog Header"
-            width={800} // Set appropriate width
-            height={400} // Set appropriate height
+            width={800} 
+            height={400} 
             className="w-full rounded-lg shadow-lg"
           />
         </div>
@@ -76,10 +76,10 @@ const BlogPage = () => {
             {/* Example of Related Posts */}
             <div className="bg-white shadow-md rounded-lg overflow-hidden">
               <Image
-                src="https://via.placeholder.com/300x150" // Replace with actual image URL
+                src="https://via.placeholder.com/300x150"
                 alt="Related Post"
-                width={300} // Set appropriate width
-                height={150} // Set appropriate height
+                width={300} 
+                height={150} 
                 className="w-full h-40 object-cover"
               />
               <div className="p-4">
@@ -97,10 +97,10 @@ const BlogPage = () => {
 
             <div className="bg-white shadow-md rounded-lg overflow-hidden">
               <Image
-                src="https://via.placeholder.com/300x150" // Replace with actual image URL
+                src="https://via.placeholder.com/300x150" 
                 alt="Related Post"
-                width={300} // Set appropriate width
-                height={150} // Set appropriate height
+                width={300} 
+                height={150} 
                 className="w-full h-40 object-cover"
               />
               <div className="p-4">

@@ -31,7 +31,7 @@ const LoginPage: React.FC = () => {
   return (
     <div>
       {/* Navigation Bar */}
-      <nav className="flex justify-between items-center bg-gray-800 text-white py-4 px-6">
+      <nav className="flex justify-between items-center bg-gray-800 text-white py-4 px-6 shadow-md fixed top-0 w-full z-10">
         <div className="text-lg font-bold">ConnectMtaani</div>
         <ul className="flex space-x-4">
           <li>
@@ -52,13 +52,13 @@ const LoginPage: React.FC = () => {
         </ul>
       </nav>
 
-      <div className="flex bg-gradient-to-r from-blue-500 to-indigo-600 min-h-[83vh]">
-        <main className="flex-grow flex justify-center items-center">
+      <div className="flex bg-gradient-to-r from-blue-500 to-indigo-600 min-h-[83vh] pt-20">
+        <main className="flex-grow flex justify-center items-center w-full px-4 sm:px-8 lg:px-16">
           {/* Left Section */}
-          <div className="flex items-center justify-center w-full h-full ml-24">
-            <div className="bg-black bg-opacity-60 p-6 text-center h-full">
+          <div className="hidden lg:flex items-center justify-center w-full h-full md:w-1/2">
+            <div className="bg-black bg-opacity-60 p-6 text-center rounded-lg shadow-lg">
               <h2 className="text-4xl font-bold text-white mb-4">Welcome Back!</h2>
-              <p className="text-lg text-gray-300">
+              <p className="text-lg text-gray-300 mb-4">
                 Join a thriving community of professionals and opportunities. Your dream job is just a click away.
               </p>
               <div className="mt-4 max-w-full rounded-lg shadow-lg">
@@ -74,8 +74,8 @@ const LoginPage: React.FC = () => {
           </div>
 
           {/* Right Section */}
-          <div className="flex items-center w-full h-full">
-            <form className="bg-white p-8 shadow-lg max-w-3xl w-full h-full" onSubmit={handleSubmit}>
+          <div className="flex items-center w-full h-full md:w-1/2 px-4 sm:px-8 lg:px-16">
+            <form className="bg-white p-8 shadow-lg rounded-lg w-full max-w-lg" onSubmit={handleSubmit}>
               <h2 className="text-2xl font-bold text-gray-800 text-center mb-4">
                 Login to Your Account
               </h2>
@@ -96,7 +96,7 @@ const LoginPage: React.FC = () => {
                   onChange={handleChange}
                   placeholder="Enter your email"
                   required
-                  className="mt-1 p-2 w-full border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
 
@@ -113,7 +113,7 @@ const LoginPage: React.FC = () => {
                   onChange={handleChange}
                   placeholder="Enter your password"
                   required
-                  className="mt-1 p-2 w-full border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
 
@@ -135,7 +135,7 @@ const LoginPage: React.FC = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200"
+                className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-200"
               >
                 Log In
               </button>
@@ -146,7 +146,7 @@ const LoginPage: React.FC = () => {
               <div className="flex flex-col gap-3 mb-6">
                 <button
                   type="button"
-                  className="w-full p-2 border border-gray-300 rounded-lg flex items-center justify-center text-white bg-red-600 hover:bg-red-700 transition duration-200"
+                  className="w-full p-3 border border-gray-300 rounded-lg flex items-center justify-center text-white bg-red-600 hover:bg-red-700 transition duration-200"
                   onClick={() => handleSocialLogin('Google')}
                 >
                   <i className="fab fa-google mr-2"></i>
@@ -154,7 +154,7 @@ const LoginPage: React.FC = () => {
                 </button>
                 <button
                   type="button"
-                  className="w-full p-2 border border-gray-300 rounded-lg flex items-center justify-center text-white bg-blue-600 hover:bg-blue-700 transition duration-200"
+                  className="w-full p-3 border border-gray-300 rounded-lg flex items-center justify-center text-white bg-blue-600 hover:bg-blue-700 transition duration-200"
                   onClick={() => handleSocialLogin('Facebook')}
                 >
                   <i className="fab fa-facebook-f mr-2"></i>
@@ -162,7 +162,7 @@ const LoginPage: React.FC = () => {
                 </button>
                 <button
                   type="button"
-                  className="w-full p-2 border border-gray-300 rounded-lg flex items-center justify-center text-white bg-blue-700 hover:bg-blue-800 transition duration-200"
+                  className="w-full p-3 border border-gray-300 rounded-lg flex items-center justify-center text-white bg-blue-700 hover:bg-blue-800 transition duration-200"
                   onClick={() => handleSocialLogin('LinkedIn')}
                 >
                   <i className="fab fa-linkedin-in mr-2"></i>
@@ -188,7 +188,7 @@ const LoginPage: React.FC = () => {
       </div>
 
       {/* Footer Section */}
-      <footer className="bg-gray-100 text-center py-6 border-t border-gray-300">
+      <footer className="bg-gray-100 text-center py-6 border-t border-gray-300 mt-10">
         <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-sm text-gray-600">
           <Link href="/privacy" className="hover:underline">
             Privacy Policy

@@ -3,9 +3,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["via.placeholder.com"],
+    domains: ["via.placeholder.com", "source.unsplash.com"],
   },
-  // Removed: distDir: "dist"
 };
 
 export default nextConfig;

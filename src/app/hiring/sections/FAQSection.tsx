@@ -8,7 +8,7 @@ const FAQSection: React.FC = () => {
     const content = {
         FIND: {
             title: "How to Find a Job on Demand now",
-            subtitle: "Seemlessly get top-notch labour for your work, and achieve your expectations",
+            subtitle: "Seamlessly get top-notch labour for your work, and achieve your expectations",
             points: [
                 "Post Your Job: Create and publish a job post in minutes.",
                 "Browse Profiles: Search and filter through job seekers based on skills, ratings, and availability.",
@@ -47,61 +47,43 @@ const FAQSection: React.FC = () => {
     const { title, subtitle, points, buttonText, buttonLink } = content[activeTab];
 
     return (
-        <section className="container mx-auto p-10 bg-white flex justify-center items-start box-border w-full">
-            <div className="max-w-3xl w-full">
+        <section className="w-full px-4 sm:px-6 md:px-10 py-10 bg-white flex justify-center">
+            <div className="w-full max-w-4xl">
                 {/* Tab Buttons */}
-                <div className="flex mb-5">
-                <button
-                    className={`px-12 py-2 text-lg cursor-pointer border border-gray-300 transition-all duration-300 ${
-                        activeTab === "FIND"
-                            ? 'bg-[#0F1A2E] text-white font-bold'
-                            : 'bg-[#FFFFFF] text-[#0F1A2E]'
-                    } hover:bg-[#0F1A2E] hover:text-white`}
-                    onClick={() => setActiveTab("FIND")}
-                >
-                    FIND
-                </button>
-                <button
-                    className={`px-12 py-2 text-lg cursor-pointer border border-gray-300 transition-all duration-300 ${
-                        activeTab === "HIRE"
-                            ? 'bg-[#0F1A2E] text-white font-bold'
-                            : 'bg-[#FFFFFF] text-[#0F1A2E]'
-                    } hover:bg-[#0F1A2E] hover:text-white`}
-                    onClick={() => setActiveTab("HIRE")}
-                >
-                    HIRE
-                </button>
-                <button
-                    className={`px-12 py-2 text-lg cursor-pointer border border-gray-300 transition-all duration-300 ${
-                        activeTab === "PAY"
-                            ? 'bg-[#0F1A2E] text-white font-bold'
-                            : 'bg-[#FFFFFF] text-[#0F1A2E]'
-                    } hover:bg-[#0F1A2E] hover:text-white`}
-                    onClick={() => setActiveTab("PAY")}
-                >
-                    PAY
-                </button>
-            </div>
+                <div className="flex flex-wrap gap-4 mb-6">
+                    {(["FIND", "HIRE", "PAY"] as const).map(tab => (
+                        <button
+                            key={tab}
+                            className={`flex-1 min-w-[100px] px-4 py-2 text-sm sm:text-base md:text-lg border border-gray-300 transition-all duration-300 rounded ${
+                                activeTab === tab
+                                    ? 'bg-[#0F1A2E] text-white font-semibold'
+                                    : 'bg-white text-[#0F1A2E]'
+                            } hover:bg-[#0F1A2E] hover:text-white`}
+                            onClick={() => setActiveTab(tab)}
+                        >
+                            {tab}
+                        </button>
+                    ))}
+                </div>
 
-
-                {/* Subheading and Title */}
-                <h3 className="text-lg text-gray-500 mb-0">{subtitle}</h3>
-                <h2 className="text-3xl font-bold mb-2 text-black">{title}</h2>
+                {/* Subtitle and Title */}
+                <h3 className="text-sm sm:text-base text-gray-500 mb-1">{subtitle}</h3>
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-black">{title}</h2>
 
                 {/* List of Points */}
-                <ul className="list-none relative pl-5 my-5">
+                <ul className="list-none relative pl-5 my-6">
                     {points.map((point, index) => {
-                        const [beforeColon, afterColon] = point.split(':'); // Split the string at the colon
+                        const [beforeColon, afterColon] = point.split(':');
                         return (
-                            <li key={index} className="relative mb-5 leading-relaxed mr-1">
+                            <li key={index} className="relative mb-6 leading-relaxed text-sm sm:text-base pr-4">
                                 <span>
                                     <strong>{beforeColon}:</strong>
                                     <br />
                                     {afterColon?.trim()}
                                 </span>
-                                <span className="absolute left-[-20px] top-1 w-3 h-3 bg-black rounded-full"></span>
+                                <span className="absolute left-[-16px] top-1 w-3 h-3 bg-black rounded-full"></span>
                                 {index < points.length - 1 && (
-                                    <span className="absolute left-[-15px] top-4 w-[2px] h-[calc(100%+8px)] bg-black"></span>
+                                    <span className="absolute left-[-12px] top-4 w-[2px] h-[calc(100%+8px)] bg-black"></span>
                                 )}
                             </li>
                         );
@@ -109,13 +91,13 @@ const FAQSection: React.FC = () => {
                 </ul>
 
                 {/* CTA Button */}
-                <div className="mt-10">
-                <a
-                    href={buttonLink} // Link added dynamically
-                    className="mt-10 px-6 py-3 text-xl font-bold text-white bg-[#e65100] border-none rounded cursor-pointer transition-all hover:bg-white hover:text-[#e65100] hover:shadow-[0_0_0_2px_inset_#e65100]"
-                >
-                    {buttonText} <i className="fas fa-arrow-right"></i>
-                </a>
+                <div className="mt-8">
+                    <a
+                        href={buttonLink}
+                        className="inline-block px-5 py-3 text-base sm:text-lg font-bold text-white bg-[#e65100] rounded transition-all hover:bg-white hover:text-[#e65100] hover:shadow-[0_0_0_2px_inset_#e65100]"
+                    >
+                        {buttonText} <i className="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
             </div>
         </section>
