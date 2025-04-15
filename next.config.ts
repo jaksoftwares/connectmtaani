@@ -1,11 +1,11 @@
-// next.config.js
+// next.config.ts
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
     domains: ["via.placeholder.com"],
   },
-  distDir: "dist" 
+  // Removed: distDir: "dist"
 };
 
 export default nextConfig;
