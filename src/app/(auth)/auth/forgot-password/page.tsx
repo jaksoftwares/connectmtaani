@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from 'react';
 
 const ForgotPassword: React.FC = () => {
@@ -46,7 +48,7 @@ const ForgotPassword: React.FC = () => {
           {/* Submit Button */}
 
           <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200">
-            <a href="/password-reset">Send Reset Link</a>
+            <a href="/auth/password-reset">Send Reset Link</a>
           </button>
 
           <div className="my-4 text-center text-gray-500">or</div>
@@ -55,7 +57,7 @@ const ForgotPassword: React.FC = () => {
           <div className="text-center">
             <p className="text-gray-600">
               Remember your password?{' '}
-              <a href="/login" className="text-blue-600 hover:underline">
+              <a href="/auth/login" className="text-blue-600 hover:underline">
                 Go back to Login
               </a>
             </p>

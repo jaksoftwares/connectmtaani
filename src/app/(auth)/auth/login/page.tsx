@@ -172,7 +172,7 @@ const LoginPage: React.FC = () => {
 
               {/* Additional Options */}
               <div className="text-center">
-                <Link href="/forgot-password" className="text-blue-600 hover:underline">
+                <Link href="/auth/forgot-password" className="text-blue-600 hover:underline">
                   Forgot Password?
                 </Link>
                 <p className="text-gray-600 mt-2">

@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
           </p>
           <div>
             <a
-              href="/signup"
+              href="/auth/signup"
               className="inline-block px-6 py-3 bg-[#e15200] text-white font-bold rounded-lg transition-all duration-300 ease-in-out hover:bg-white hover:text-[#e15200] hover:border-[#e15200] border-2 border-transparent"
             >
               Get Started

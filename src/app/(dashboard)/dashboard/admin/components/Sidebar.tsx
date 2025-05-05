@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from 'react';
 import { FaTachometerAlt, FaBriefcase, FaFolder, FaFlag, FaUsers, FaFileAlt, FaCog } from 'react-icons/fa';
 

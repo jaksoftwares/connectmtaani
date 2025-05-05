@@ -28,7 +28,7 @@ const ResourcesGrid = () => {
     },
     {
       id: 4,
-      image: "https://source.unsplash.com/600x400/?labor,employment",
+      image: "/images/workplace.jpg",
       title: "The Future of the Gig Economy",
       description:
         "Explore the trends shaping the future of gig work and how you can adapt to a rapidly changing labor market.",
@@ -36,7 +36,7 @@ const ResourcesGrid = () => {
     },
     {
       id: 5,
-      image: "https://source.unsplash.com/600x400/?labor,employment",
+      image: "/images/workplace.jpg",
       title: "Efficient Workforce Allocation Strategies",
       description:
         "Learn how to allocate resources effectively to maximize productivity and minimize downtime in your workforce.",
@@ -44,7 +44,7 @@ const ResourcesGrid = () => {
     },
     {
       id: 6,
-      image: "https://source.unsplash.com/600x400/?labor,employment",
+      image: "/images/workplace4.jpg",
       title: "Empowering Informal Sector Workers",
       description:
         "Discover tools and strategies to empower workers in the informal sector, enabling them to reach their full potential.",
@@ -60,7 +60,7 @@ const ResourcesGrid = () => {
     },
     {
       id: 8,
-      image: "https://source.unsplash.com/600x400/?labor,employment",
+      image: "/images/workplace3.jpg",
       title: "How Technology is Transforming Employment",
       description:
         "From job matching platforms to digital contracts, see how technology is changing the way people find and manage work.",
@@ -68,7 +68,7 @@ const ResourcesGrid = () => {
     },
     {
       id: 9,
-      image: "https://source.unsplash.com/600x400/?labor,employment",
+      image: "/images/workplace2.jpg",
       title: "Understanding the Benefits of Flexible Work",
       description:
         "Learn why flexible work arrangements are becoming more popular and how they can benefit both employers and workers.",
@@ -76,7 +76,7 @@ const ResourcesGrid = () => {
     },
     {
       id: 10,
-      image: "https://source.unsplash.com/600x400/?labor,employment",
+      image: "/images/workplace.jpg",
       title: "Adapting to a New Workforce Dynamic",
       description:
         "Explore how businesses can adapt to the evolving expectations and needs of today’s workforce.",
